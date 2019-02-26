@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="引言计算机系统中，经验以数据形式体现 机器学习任务：从数据中产生模型 形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。 基本术语属性&amp;amp;记录：（属性=记录） 数据集：示例的集合 维数：属性数目 训练集：用于训练模型的样本 测试集：对训练模型进行预测的样本 样本空间：M个属性，每个有N种值，则空间规模为M*N 假设空间： 归纳">
+<meta name="description" content="引言计算机系统中，经验以数据形式体现 机器学习任务：从数据中产生模型 形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。 基本术语属性&amp;amp;记录：（属性=记录） 数据集：示例的集合 维数：属性数目 训练集：用于训练模型的样本 测试集：对训练模型进行预测的样本 样本空间：M个属性，每个有N种值，则空间规模为M*N 假设空间：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习西瓜书 （一）基础知识">
 <meta property="og:url" content="http://yoursite.com/2019/02/25/机器学习西瓜书-（一）基础知识/index.html">
 <meta property="og:site_name" content="Avalon">
-<meta property="og:description" content="引言计算机系统中，经验以数据形式体现 机器学习任务：从数据中产生模型 形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。 基本术语属性&amp;amp;记录：（属性=记录） 数据集：示例的集合 维数：属性数目 训练集：用于训练模型的样本 测试集：对训练模型进行预测的样本 样本空间：M个属性，每个有N种值，则空间规模为M*N 假设空间： 归纳">
+<meta property="og:description" content="引言计算机系统中，经验以数据形式体现 机器学习任务：从数据中产生模型 形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。 基本术语属性&amp;amp;记录：（属性=记录） 数据集：示例的集合 维数：属性数目 训练集：用于训练模型的样本 测试集：对训练模型进行预测的样本 样本空间：M个属性，每个有N种值，则空间规模为M*N 假设空间：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-26T10:44:11.960Z">
+<meta property="og:updated_time" content="2019-02-26T10:52:11.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习西瓜书 （一）基础知识">
-<meta name="twitter:description" content="引言计算机系统中，经验以数据形式体现 机器学习任务：从数据中产生模型 形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。 基本术语属性&amp;amp;记录：（属性=记录） 数据集：示例的集合 维数：属性数目 训练集：用于训练模型的样本 测试集：对训练模型进行预测的样本 样本空间：M个属性，每个有N种值，则空间规模为M*N 假设空间： 归纳">
+<meta name="twitter:description" content="引言计算机系统中，经验以数据形式体现 机器学习任务：从数据中产生模型 形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。 基本术语属性&amp;amp;记录：（属性=记录） 数据集：示例的集合 维数：属性数目 训练集：用于训练模型的样本 测试集：对训练模型进行预测的样本 样本空间：M个属性，每个有N种值，则空间规模为M*N 假设空间：">
 
 
 
@@ -349,7 +349,9 @@
       
 
       
-        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>计算机系统中，经验以数据形式体现</p>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>计算机系统中，经验以数据形式体现</p>
 <p>机器学习任务：从数据中产生模型</p>
 <p>形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。</p>
 <h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p><strong>属性&amp;记录：</strong>（属性=记录）</p>
@@ -386,7 +388,7 @@
 </ul>
 <h2 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h2><p>留出法和交叉验证法保留部分样本用于测试，实际模型的训练集比D小，会因为训练样本大小不同，引入估计偏差。</p>
 <p><strong>自主法：</strong>有放回的进行抽样，使样本和数据等大。</p>
-<p>样本在m次采样中始终不被采到的概率为（1-1/m）^m,取极限值为$\lim_{m\rightarrow+\infty} (1-\frac{1}{m})^m=\frac{1}{e}\approx0.368$</p>
+<p>样本在m次采样中始终不被采到的概率为（1-1/m）^m,取极限值为$$\lim_{m\rightarrow+\infty} (1-\frac{1}{m})^m=\frac{1}{e}\approx0.368$$</p>
 <p>约0.368的样本未出现在采样数据集中，可用于测试。</p>
 <p>三个优点：</p>
 <ul>
