@@ -392,7 +392,7 @@
 </ul>
 <h2 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h2><p>留出法和交叉验证法保留部分样本用于测试，实际模型的训练集比D小，会因为训练样本大小不同，引入估计偏差。</p>
 <p><strong>自主法：</strong>有放回的进行抽样，使样本和数据等大。</p>
-<p>样本在m次采样中始终不被采到的概率为（1-1/m）^m,取极限值为$$\lim_{m\rightarrow+\infty} (1-\frac{1}{m})^m=\frac{1}{e}\approx0.368$$</p>
+<p>样本在m次采样中始终不被采到的概率为$(1-\frac{1}{m})^m$,取极限值为<br>$$\lim_{m\rightarrow+\infty} (1-\frac{1}{m})^m=\frac{1}{e}\approx0.368$$</p>
 <p>约0.368的样本未出现在采样数据集中，可用于测试。</p>
 <p>三个优点：</p>
 <ul>
@@ -522,28 +522,13 @@
         
           
             <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code>$ hexo &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;
-`&lt;/pre&gt;
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-&lt;pre&gt;`$ hexo &lt;span class=&quot;hljs-keyword&quot;&gt;server&lt;/span&gt;
-`&lt;/pre&gt;
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-&lt;pre&gt;`&lt;span class=&quot;hljs-variable&quot;&gt;$ &lt;/span&gt;hexo generate
-`&lt;/pre&gt;
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-&lt;pre&gt;`&lt;span class=&quot;hljs-variable&quot;&gt;$ &lt;/span&gt;hexo deploy
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code>$ hexo new &quot;My New Post&quot;
+</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code>$ hexo server
+</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code>$ hexo generate
+</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code>$ hexo deploy
 </code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
           
