@@ -353,9 +353,7 @@
       
         
           
-            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>计算机系统中，经验以数据形式体现</p>
+            <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>计算机系统中，经验以数据形式体现</p>
 <p>机器学习任务：从数据中产生模型</p>
 <p>形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。</p>
 <h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p><strong>属性&amp;记录：</strong>（属性=记录）</p>
@@ -392,8 +390,8 @@
 </ul>
 <h2 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h2><p>留出法和交叉验证法保留部分样本用于测试，实际模型的训练集比D小，会因为训练样本大小不同，引入估计偏差。</p>
 <p><strong>自主法：</strong>有放回的进行抽样，使样本和数据等大。</p>
-<p>样本在m次采样中始终不被采到的概率为<br>$$(1-\frac{1}{m})^m$$<br>取极限值为<br>$$\lim_{m\rightarrow+\infty} (1-\frac{1}{m})^m=\frac{1}{e}\approx0.368$$</p>
-<p>约0.368的样本未出现在采样数据集中，可用于测试。</p>
+<p>样本在m次采样中始终不被采到的概率为$(1-\frac{1}{m})^m$，取极限值为</p>
+<script type="math/tex; mode=display">\lim_{m\rightarrow+\infty} (1-\frac{1}{m})^m=\frac{1}{e}\approx0.368</script><p>约0.368的样本未出现在采样数据集中，可用于测试。</p>
 <p>三个优点：</p>
 <ul>
 <li>训练集和数据集等大</li>
@@ -837,6 +835,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
