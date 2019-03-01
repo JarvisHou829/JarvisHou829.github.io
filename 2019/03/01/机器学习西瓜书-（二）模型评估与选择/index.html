@@ -79,16 +79,26 @@
 
 
 
-<meta name="description" content="生如逆旅 一苇以航">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Avalon">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="模型评估与选择经验误差与过拟合机器学习的目的是尽可能获得所有潜在样本的普遍规律 错误率如果m个样本中有a个样本分类错误，则错误率为E=a/m，精度为1-E。 误差模型实际预测值与样本真实值之间的差异。训练集上的误差称训练误差，新样本上的误差称泛化误差。 过拟合&amp;amp;欠拟合过拟合是机器学习的关键障碍。 理想方案：对多个候选模型进行泛化误差评估，选择泛化误差最小的模型。 评估方法抽样出测试集，作为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习西瓜书 （二）模型评估与选择">
+<meta property="og:url" content="http://yoursite.com/2019/03/01/机器学习西瓜书-（二）模型评估与选择/index.html">
 <meta property="og:site_name" content="Avalon">
-<meta property="og:description" content="生如逆旅 一苇以航">
+<meta property="og:description" content="模型评估与选择经验误差与过拟合机器学习的目的是尽可能获得所有潜在样本的普遍规律 错误率如果m个样本中有a个样本分类错误，则错误率为E=a/m，精度为1-E。 误差模型实际预测值与样本真实值之间的差异。训练集上的误差称训练误差，新样本上的误差称泛化误差。 过拟合&amp;amp;欠拟合过拟合是机器学习的关键障碍。 理想方案：对多个候选模型进行泛化误差评估，选择泛化误差最小的模型。 评估方法抽样出测试集，作为">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551352209x2728278692.jpg">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551353869x2728278811.jpg">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551354796x2918527038.png">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551355669x2890191655.png">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551357669x2728279033.png">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551359428x2728278692.png">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551359460x2728278692.png">
+<meta property="og:image" content="http://thyrsi.com/t6/674/1551360288x2918527038.jpg">
+<meta property="og:updated_time" content="2019-03-01T05:11:51.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Avalon">
-<meta name="twitter:description" content="生如逆旅 一苇以航">
+<meta name="twitter:title" content="机器学习西瓜书 （二）模型评估与选择">
+<meta name="twitter:description" content="模型评估与选择经验误差与过拟合机器学习的目的是尽可能获得所有潜在样本的普遍规律 错误率如果m个样本中有a个样本分类错误，则错误率为E=a/m，精度为1-E。 误差模型实际预测值与样本真实值之间的差异。训练集上的误差称训练误差，新样本上的误差称泛化误差。 过拟合&amp;amp;欠拟合过拟合是机器学习的关键障碍。 理想方案：对多个候选模型进行泛化误差评估，选择泛化误差最小的模型。 评估方法抽样出测试集，作为">
+<meta name="twitter:image" content="http://thyrsi.com/t6/674/1551352209x2728278692.jpg">
 
 
 
@@ -118,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/01/机器学习西瓜书-（二）模型评估与选择/">
 
 
 
 
 
-  <title>Avalon</title>
+  <title>机器学习西瓜书 （二）模型评估与选择 | Avalon</title>
   
 
 
@@ -143,8 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/jarvishou829" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -267,171 +276,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/机器学习西瓜书-（三）线性模型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis Hou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog_logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Avalon">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/01/机器学习西瓜书-（三）线性模型/" itemprop="url">机器学习西瓜书 （三）线性模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-01T13:10:41+08:00">
-                2019-03-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="线性模型"><a href="#线性模型" class="headerlink" title="线性模型"></a>线性模型</h1><h2 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h2><p>给定d个属性的实例$x=(x_1;x_2;……;x_d)$，线性模型试图通过线性组合进行函数预测：</p>
-<script type="math/tex; mode=display">f(x)=w_1x_1+w_2x_2+...+w_dx_d+b</script><p>向量形式：</p>
-<script type="math/tex; mode=display">f(x)=\overrightarrow w^T\overrightarrow x+b</script><p>优点：解释性好，从系数可以看出变量影响程度。</p>
-<p>很多更强大的非线性模型，可在线性模型上通过引入层级结构或高维映射获得。</p>
-<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定数据集$D=\{(x_1,y_1),(x_2,y_2),…(x_d,y_d) \}$，其中$x_i=(x_{i_1};x_{i_2};…;x_{i_d})$，$y_i\in R$</p>
-<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><ol>
-<li>实数值</li>
-<li>序数值，比如高中低可转化为{1，0.5，0}</li>
-<li>枚举值，若k个属性值，转化为k维向量，比如红绿蓝，转化为(0,0,1),(0,1,0),(1,0,0)<h3 id="均方误差"><a href="#均方误差" class="headerlink" title="均方误差"></a>均方误差</h3>线性回归目标函数：<script type="math/tex; mode=display">f(x_i)=wx_i+b, \space \space s.t.\space \space f(x_i)\simeq y_i</script>最常用的性能度量：均方误差</li>
-</ol>
-<p>基于均方误差最小化进行模型求解，称为最小二乘法。<br>目标函数：</p>
-<script type="math/tex; mode=display">E(w,b)=\sum_{i=1}^m (y_i-wx_i-b)^2</script><h3 id="求解最小二乘"><a href="#求解最小二乘" class="headerlink" title="求解最小二乘"></a>求解最小二乘</h3><p>参数估计，对w和b求导，偏导数为0。</p>
-<p>求解得结果</p>
-<script type="math/tex; mode=display">w=\frac{\sum_{i=1}^m y_i(x_i-\overline x)}{\sum_{i=1}^m x_i^2-\frac 1 m (\sum_{i=1}^m x_i)^2}</script><script type="math/tex; mode=display">b=\frac 1 m \sum_{i=1}^m(y_i-wx_i)</script><p>其中$\overline x=\frac 1 m \sum_{i=1}^mx_i$为x的均值</p>
-<h3 id="多元扩展"><a href="#多元扩展" class="headerlink" title="多元扩展"></a>多元扩展</h3><p><img src="http://thyrsi.com/t6/675/1551419270x2890149512.jpg" alt=""><br><img src="http://thyrsi.com/t6/675/1551419302x2890149512.jpg" alt=""><br><img src="http://thyrsi.com/t6/675/1551419325x2890149512.jpg" alt=""></p>
-<h2 id="对数几率回归"><a href="#对数几率回归" class="headerlink" title="对数几率回归"></a>对数几率回归</h2><p>对于分类任务，可用单调可微函数将真实标记Y与线性回归模型的预测值联系起来。不能直接线性拟合：<br><img src="http://thyrsi.com/t6/675/1551419540x2890149512.png" alt=""><br>单位阶跃函数：</p>
-<script type="math/tex; mode=display">y = \begin{cases} 0, & z<0 \\ 0.5, & z=0 \\ 1, & z>0 \end{cases}</script><p>对比两个函数<br><img src="http://thyrsi.com/t6/675/1551419854x2890149512.jpg" alt=""><br>对数几率函数的反函数：</p>
-<script type="math/tex; mode=display">y=\frac 1 {1+e^{-(w^Tx+b)}}</script><p>变换：</p>
-<script type="math/tex; mode=display">ln\frac y {1-y}=w^Tx+b</script><p>将y视为样本x为正例的可能性，则1-y是反例可能性。<br>用线性回归模型的预测结果，去逼近真实标记的对数几率。</p>
-<script type="math/tex; mode=display">ln\frac y {1-y}</script><p>优点：</p>
-<ol>
-<li>直接对分类可能性建模，无需事先假设数据分布，避免假设分布不准确的问题</li>
-<li>除了类别，给出了精确概率</li>
-<li>是任意阶可导的凸函数，很多数值优化算法可直接求取最优解<br><img src="http://thyrsi.com/t6/675/1551420749x2728278668.jpg" alt=""><br><img src="http://thyrsi.com/t6/675/1551420770x2728278668.jpg" alt=""><h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><img src="http://thyrsi.com/t6/675/1551420793x2728278668.png" alt=""><h3 id="牛顿法"><a href="#牛顿法" class="headerlink" title="牛顿法"></a>牛顿法</h3><img src="http://thyrsi.com/t6/675/1551420824x2728278668.jpg" alt=""></li>
-</ol>
-<h2 id="线性判别分析"><a href="#线性判别分析" class="headerlink" title="线性判别分析"></a>线性判别分析</h2><p>由统计家Fisher提出，也称为Fisher判别分析。</p>
-<p>LDA基本思想：给定训练样例集，设法将样例投影到一条直线，使同类别投影点尽可能近，异类尽可能远。<br><img src="http://thyrsi.com/t6/675/1551421435x2728278692.jpg" alt=""><br><img src="http://thyrsi.com/t6/675/1551421624x2728278692.jpg" alt=""></p>
-<h3 id="类内-间散度矩阵"><a href="#类内-间散度矩阵" class="headerlink" title="类内/间散度矩阵"></a>类内/间散度矩阵</h3><p><img src="http://thyrsi.com/t6/675/1551421756x2728278692.jpg" alt=""><br><img src="http://thyrsi.com/t6/675/1551421875x2728278692.png" alt=""></p>
-<h3 id="拉格朗日乘子"><a href="#拉格朗日乘子" class="headerlink" title="拉格朗日乘子"></a>拉格朗日乘子</h3><p><img src="http://thyrsi.com/t6/675/1551422118x2728278692.png" alt=""></p>
-<h4 id="向量求导"><a href="#向量求导" class="headerlink" title="向量求导"></a>向量求导</h4><p><img src="http://thyrsi.com/t6/675/1551422300x2728278692.png" alt=""><br><img src="http://thyrsi.com/t6/675/1551422443x2728278692.jpg" alt=""></p>
-<h4 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h4><p><img src="http://thyrsi.com/t6/675/1551422495x2728278692.png" alt=""><br><img src="http://thyrsi.com/t6/675/1551422625x2728278692.jpg" alt=""></p>
-<h2 id="多分类学习"><a href="#多分类学习" class="headerlink" title="多分类学习"></a>多分类学习</h2><p>基本思路：拆解法，将多分类任务拆为若干个二分类任务求解。</p>
-<h3 id="OvO（一对一）"><a href="#OvO（一对一）" class="headerlink" title="OvO（一对一）"></a>OvO（一对一）</h3><p>将N个类别两两配对，产生N(N-1)/2个二分类任务。<br>在测试阶段，将新样本交给所有分类器，投票产生分类结果。</p>
-<h3 id="OvR（一对余）"><a href="#OvR（一对余）" class="headerlink" title="OvR（一对余）"></a>OvR（一对余）</h3><p>每次将一个类视为正例，剩余其他类作为反例，gognN个分类器。<br><img src="http://thyrsi.com/t6/675/1551422990x2728278692.jpg" alt=""></p>
-<h3 id="MvM（多对多）"><a href="#MvM（多对多）" class="headerlink" title="MvM（多对多）"></a>MvM（多对多）</h3><p><img src="http://thyrsi.com/t6/675/1551423211x2728278692.png" alt=""><br><img src="http://thyrsi.com/t6/675/1551423234x2728278692.png" alt=""></p>
-<h2 id="类别不平衡问题"><a href="#类别不平衡问题" class="headerlink" title="类别不平衡问题"></a>类别不平衡问题</h2><p><img src="http://thyrsi.com/t6/675/1551423327x2728278692.png" alt=""></p>
-<h3 id="欠采样"><a href="#欠采样" class="headerlink" title="欠采样"></a>欠采样</h3><p>去除一些反例，来调整正反例比例。（比如接近）</p>
-<p>缺点：丢失了一些训练集</p>
-<p>EasyEnsemble算法：利用集成学习机制，将反例划分为若干不同集合供不同学习器使用，全局看，不再丢失信息。</p>
-<h3 id="过采样"><a href="#过采样" class="headerlink" title="过采样"></a>过采样</h3><p>增加一些正例，控制正反例比例。<br>不能简单对正例进行重复采样，否则会严重过拟合。</p>
-<p>SMOTE算法：通过对训练集里的正例进行插值来产生额外的正例。<br><img src="http://thyrsi.com/t6/675/1551423656x2728278692.png" alt=""></p>
-<h3 id="阈值移动"><a href="#阈值移动" class="headerlink" title="阈值移动"></a>阈值移动</h3><p>用原始数据集，决策时，用再放缩的阈值。</p>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><img src="http://thyrsi.com/t6/675/1551423800x2728278692.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -461,9 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/01/机器学习西瓜书-（二）模型评估与选择/" itemprop="url">机器学习西瓜书 （二）模型评估与选择</a></h1>
+          <h1 class="post-title" itemprop="name headline">机器学习西瓜书 （二）模型评估与选择</h1>
         
 
         <div class="post-meta">
@@ -513,9 +358,7 @@
       
 
       
-        
-          
-            <h1 id="模型评估与选择"><a href="#模型评估与选择" class="headerlink" title="模型评估与选择"></a>模型评估与选择</h1><h2 id="经验误差与过拟合"><a href="#经验误差与过拟合" class="headerlink" title="经验误差与过拟合"></a>经验误差与过拟合</h2><p>机器学习的目的是尽可能获得所有潜在样本的普遍规律</p>
+        <h1 id="模型评估与选择"><a href="#模型评估与选择" class="headerlink" title="模型评估与选择"></a>模型评估与选择</h1><h2 id="经验误差与过拟合"><a href="#经验误差与过拟合" class="headerlink" title="经验误差与过拟合"></a>经验误差与过拟合</h2><p>机器学习的目的是尽可能获得所有潜在样本的普遍规律</p>
 <h3 id="错误率"><a href="#错误率" class="headerlink" title="错误率"></a>错误率</h3><p>如果m个样本中有a个样本分类错误，则错误率为E=a/m，精度为1-E。</p>
 <h3 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h3><p>模型实际预测值与样本真实值之间的差异。训练集上的误差称训练误差，新样本上的误差称泛化误差。</p>
 <h3 id="过拟合-amp-欠拟合"><a href="#过拟合-amp-欠拟合" class="headerlink" title="过拟合&amp;欠拟合"></a>过拟合&amp;欠拟合</h3><p>过拟合是机器学习的关键障碍。</p>
@@ -773,8 +616,6 @@
 <script type="math/tex; mode=display">bias^2(x)=(\overline f(x)-y)^2</script><p>对算法的期望泛化误差进行分解化简，结果为：</p>
 <script type="math/tex; mode=display">E(f;D)=bias^2(x)+var(x)+\epsilon^2</script><p>学习器性能变化：训练不够时，偏差大，占主要的；训练加深，特征越学越多，过拟合，方差大。<br><img src="http://thyrsi.com/t6/674/1551360288x2918527038.jpg" alt=""></p>
 
-          
-        
       
     </div>
     
@@ -791,148 +632,32 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/机器学习西瓜书-（一）基础知识/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis Hou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog_logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Avalon">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/25/机器学习西瓜书-（一）基础知识/" itemprop="url">机器学习西瓜书 （一）基础知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T17:52:44+08:00">
-                2019-02-25
-              </time>
+              <a href="/2019/02/25/机器学习西瓜书-（一）基础知识/" rel="next" title="机器学习西瓜书 （一）基础知识">
+                <i class="fa fa-chevron-left"></i> 机器学习西瓜书 （一）基础知识
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2019/03/01/机器学习西瓜书-（三）线性模型/" rel="prev" title="机器学习西瓜书 （三）线性模型">
+                机器学习西瓜书 （三）线性模型 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>计算机系统中，经验以数据形式体现</p>
-<p>机器学习任务：从数据中产生模型</p>
-<p>形式化定义：假设假设用P来评估计算机程序在任务T上的性能，若通过利用经验E获得改善，则说关于T和P，对E进行了学习。</p>
-<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p><strong>属性&amp;记录：</strong>（属性=记录）</p>
-<p><strong>数据集：</strong> 示例的集合</p>
-<p><strong>维数：</strong> 属性数目</p>
-<p><strong>训练集：</strong> 用于训练模型的样本</p>
-<p><strong>测试集：</strong> 对训练模型进行预测的样本</p>
-<p><strong>样本空间：</strong> M个属性，每个有N种值，则空间规模为M*N</p>
-<p><strong>假设空间：</strong></p>
-<p>归纳：从特殊到一半的泛化过程</p>
-<p>搜索策略：自顶向下，自底向上，一般到特殊，特殊到一般。搜索过程可以不断删除与正例不一致的假设，和与反例一致的假设。</p>
-<p><strong>版本空间：</strong> 学习过程基于样本进行训练，称之为版本空间。</p>
-<h2 id="归纳偏好"><a href="#归纳偏好" class="headerlink" title="归纳偏好"></a>归纳偏好</h2><p>机器学习过程中，对某类型假设的偏好。</p>
-<p><strong>奥卡姆剃刀：</strong> 若有多个假设与观察一致，选最简单的那个。</p>
-<p><strong>没有免费的午餐定理（NFL）：</strong> 所有“问题”的出现机会相同，或所有问题同等重要时，误差与学习算法无关。</p>
-<p>结论： 谈论算法优劣必须针对具体的学习问题，学习算法自身的归纳偏好与问题是否匹配，往往有决定性作用。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -942,138 +667,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jarvis Hou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog_logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Avalon">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/14/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-14T17:52:44+08:00">
-                2019-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code>$ hexo new &quot;My New Post&quot;
-</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code>$ hexo server
-</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code>$ hexo generate
-</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code>$ hexo deploy
-</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1081,6 +679,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1101,8 +703,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1146,6 +757,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型评估与选择"><span class="nav-number">1.</span> <span class="nav-text">模型评估与选择</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验误差与过拟合"><span class="nav-number">1.1.</span> <span class="nav-text">经验误差与过拟合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误率"><span class="nav-number">1.1.1.</span> <span class="nav-text">错误率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差"><span class="nav-number">1.1.2.</span> <span class="nav-text">误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过拟合-amp-欠拟合"><span class="nav-number">1.1.3.</span> <span class="nav-text">过拟合&amp;欠拟合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估方法"><span class="nav-number">1.2.</span> <span class="nav-text">评估方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#留出法"><span class="nav-number">1.2.1.</span> <span class="nav-text">留出法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉验证法（K折交叉验证）"><span class="nav-number">1.2.2.</span> <span class="nav-text">交叉验证法（K折交叉验证）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自助法"><span class="nav-number">1.2.3.</span> <span class="nav-text">自助法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调参与最终模型"><span class="nav-number">1.2.4.</span> <span class="nav-text">调参与最终模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法调参："><span class="nav-number">1.2.4.1.</span> <span class="nav-text">算法调参：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型调参："><span class="nav-number">1.2.4.2.</span> <span class="nav-text">模型调参：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整方式："><span class="nav-number">1.2.4.3.</span> <span class="nav-text">调整方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参数选择"><span class="nav-number">1.2.4.3.1.</span> <span class="nav-text">参数选择</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能度量"><span class="nav-number">1.3.</span> <span class="nav-text">性能度量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#均方误差"><span class="nav-number">1.3.1.</span> <span class="nav-text">均方误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误率-amp-精度"><span class="nav-number">1.3.2.</span> <span class="nav-text">错误率&amp;精度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#错误率-1"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">错误率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#精度"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">精度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查准率-amp-查全率-amp-F1"><span class="nav-number">1.3.3.</span> <span class="nav-text">查准率&amp;查全率&amp;F1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查准率（precision）"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">查准率（precision）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查全率（recall）"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">查全率（recall）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P-R曲线"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">P-R曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-1"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">$F_1$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局性能指标"><span class="nav-number">1.3.4.</span> <span class="nav-text">全局性能指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#宏指标"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">宏指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微指标"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">微指标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROC-amp-AUC"><span class="nav-number">1.3.5.</span> <span class="nav-text">ROC&amp;AUC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ROC"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">ROC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AUC-Area-Under-ROC-Curve"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">AUC(Area Under ROC Curve)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代价敏感错误率-amp-代价曲线"><span class="nav-number">1.3.6.</span> <span class="nav-text">代价敏感错误率&amp;代价曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代价矩阵"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">代价矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价敏感错误率"><span class="nav-number">1.3.6.2.</span> <span class="nav-text">代价敏感错误率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价曲线图"><span class="nav-number">1.3.6.3.</span> <span class="nav-text">代价曲线图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总体代价期望"><span class="nav-number">1.3.6.4.</span> <span class="nav-text">总体代价期望</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较检验"><span class="nav-number">1.4.</span> <span class="nav-text">比较检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#假设检验"><span class="nav-number">1.4.1.</span> <span class="nav-text">假设检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉验证t检验"><span class="nav-number">1.4.2.</span> <span class="nav-text">交叉验证t检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#McNemar检验"><span class="nav-number">1.4.3.</span> <span class="nav-text">McNemar检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Friedman检验"><span class="nav-number">1.4.4.</span> <span class="nav-text">Friedman检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nemenyi检验"><span class="nav-number">1.4.5.</span> <span class="nav-text">Nemenyi检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差-amp-方差"><span class="nav-number">1.5.</span> <span class="nav-text">偏差&amp;方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.5.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回归任务"><span class="nav-number">1.5.2.</span> <span class="nav-text">回归任务</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1286,6 +913,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
